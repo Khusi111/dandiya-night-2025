@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { CountdownTimer } from "@/components/countdown-timer"
-import { MapPin, Calendar, Music, Users, Utensils, Trophy, Phone, MessageCircle } from "lucide-react"
+import { MapPin, Calendar, Music, Users, Utensils, Trophy, Phone, MessageCircle , Clock} from "lucide-react"
 
 export default function DandiyaNightLanding() {
   useEffect(() => {
@@ -27,8 +27,8 @@ export default function DandiyaNightLanding() {
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 to-green-100 overflow-hidden">
   {/* Background Overlay */}
   <div className="absolute inset-0">
-    <div className="absolute inset-0 bg-[url('/vibrant-dandiya-garba-dancers-celebration-festival.jpg')] bg-cover bg-center opacity-20"></div>
-    <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-white/70"></div>
+    <div className="absolute inset-0 bg-[url('/vibrant-dandiya-garba-dancers-celebration-festival.jpg')] bg-cover bg-center opacity-40"></div>
+    <div className="absolute inset-0 bg-gradient-to-b from-white/20 to-white/40"></div>
   </div>
 
   {/* Content */}
@@ -167,89 +167,106 @@ export default function DandiyaNightLanding() {
       </section>
 
       {/* Ticket & Offers Section */}
-      <section id="tickets" className="py-16 px-4 bg-muted/50">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-foreground flex items-center justify-center gap-2">
-  <Ticket className="h-8 w-8 text-primary" /> Ticket & Offers
-</h2>
+<section id="tickets" className="py-16 px-4 bg-muted/50">
+  <div className="max-w-4xl mx-auto">
+    <div className="text-center mb-12">
+      <h2 className="text-4xl font-bold mb-4 text-foreground flex items-center justify-center gap-2">
+        <Ticket className="h-8 w-8 text-primary" /> Ticket & Offers
+      </h2>
+      <p className="text-xl text-muted-foreground">Choose your perfect pass</p>
+    </div>
 
-            <p className="text-xl text-muted-foreground">Choose your perfect pass</p>
+    {/* Ticket Cards */}
+    <div className="grid md:grid-cols-3 gap-6 mb-8 text-left">
+      {/* Early Bird */}
+      <Card className="border-2 border-primary/30 relative flex flex-col justify-between">
+        <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">Early Bird</Badge>
+        <CardHeader>
+          <CardTitle className="text-2xl">Early Bird Pass</CardTitle>
+          <CardDescription>Valid till October 1st</CardDescription>
+        </CardHeader>
+        <CardContent className="flex flex-col justify-between">
+          <div>
+            <div className="text-4xl font-bold text-primary mb-4">₹299</div>
+            <ul className="text-sm space-y-2 mb-6">
+              <li>✓ Entry to all events</li>
+              <li>✓ Welcome drink</li>
+              <li>✓ Dandiya sticks included</li>
+            </ul>
           </div>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-auto">Get Early Bird Pass</Button>
+          </a>
+        </CardContent>
+      </Card>
 
-          {/* Ticket Cards */}
-          <div className="grid md:grid-cols-3 gap-6 mb-8">
-            {/* Early Bird */}
-            <Card className="border-2 border-primary/30 relative">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">Early Bird</Badge>
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Early Bird Pass</CardTitle>
-                <CardDescription>Valid till October 1st</CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="text-4xl font-bold text-primary mb-4">₹299</div>
-                <ul className="text-sm space-y-2 mb-6">
-                  <li>✓ Entry to all events</li>
-                  <li>✓ Welcome drink</li>
-                  <li>✓ Dandiya sticks included</li>
-                </ul>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">Get Early Bird Pass</Button>
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Couple Pass */}
-            <Card className="border-2 border-secondary/30">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Couple Pass</CardTitle>
-                <CardDescription>Perfect for two</CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="text-4xl font-bold text-secondary mb-4">₹499</div>
-                <ul className="text-sm space-y-2 mb-6">
-                  <li>✓ Entry for 2 people</li>
-                  <li>✓ Welcome drinks</li>
-                  <li>✓ Dandiya sticks for both</li>
-                  <li>✓ Couple photo session</li>
-                </ul>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">Get Couple Pass</Button>
-                </a>
-              </CardContent>
-            </Card>
-
-            {/* Group Pass */}
-            <Card className="border-2 border-accent/30 relative">
-              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-accent-foreground">Best Value</Badge>
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl">Group Pass</CardTitle>
-                <CardDescription>5 People - Special Discount</CardDescription>
-              </CardHeader>
-              <CardContent className="text-center">
-                <div className="text-4xl font-bold text-accent mb-4">₹999</div>
-                <ul className="text-sm space-y-2 mb-6">
-                  <li>✓ Entry for 5 people</li>
-                  <li>✓ Welcome drinks for all</li>
-                  <li>✓ Dandiya sticks included</li>
-                  <li>✓ Group photo session</li>
-                  <li>✓ Priority seating</li>
-                </ul>
-                <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">Get Group Pass</Button>
-                </a>
-              </CardContent>
-            </Card>
+      {/* Couple Pass */}
+      <Card className="border-2 border-secondary/30 flex flex-col justify-between">
+        <CardHeader>
+          <CardTitle className="text-2xl">Couple Pass</CardTitle>
+          <CardDescription>Perfect for two</CardDescription>
+        </CardHeader>
+        <CardContent className="flex flex-col justify-between">
+          <div>
+            <div className="text-4xl font-bold text-secondary mb-4">₹499</div>
+            <ul className="text-sm space-y-2 mb-6">
+              <li>✓ Entry for 2 people</li>
+              <li>✓ Welcome drinks</li>
+              <li>✓ Dandiya sticks for both</li>
+              <li>✓ Couple photo session</li>
+            </ul>
           </div>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-auto">Get Couple Pass</Button>
+          </a>
+        </CardContent>
+      </Card>
 
-          <div className="text-center">
-            <p className="text-lg font-semibold text-primary mb-4">👉 Limited Passes Available – Hurry!</p>
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground sticky bottom-4" data-scroll-to="tickets">
-              🎟️ Grab Your Pass Now
-            </Button>
+      {/* Group Pass */}
+      <Card className="border-2 border-accent/30 relative flex flex-col justify-between">
+        <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-accent text-accent-foreground">Best Value</Badge>
+        <CardHeader>
+          <CardTitle className="text-2xl">Group Pass</CardTitle>
+          <CardDescription>5 People - Special Discount</CardDescription>
+        </CardHeader>
+        <CardContent className="flex flex-col justify-between">
+          <div>
+            <div className="text-4xl font-bold text-accent mb-4">₹999</div>
+            <ul className="text-sm space-y-2 mb-6">
+              <li>✓ Entry for 5 people</li>
+              <li>✓ Welcome drinks for all</li>
+              <li>✓ Dandiya sticks included</li>
+              <li>✓ Group photo session</li>
+              <li>✓ Priority seating</li>
+            </ul>
           </div>
-        </div>
-      </section>
+          <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
+            <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground mt-auto">Get Group Pass</Button>
+          </a>
+        </CardContent>
+      </Card>
+    </div>
+
+    <div className="text-center">
+      <div className="flex justify-center mb-4">
+        <p className="text-lg font-semibold text-primary flex items-center gap-2">
+          <Clock className="w-5 h-5" /> Limited Passes Available – Hurry!
+        </p>
+      </div>
+
+      <div className="flex justify-center">
+        <Button
+          size="lg"
+          className="bg-primary hover:bg-primary/90 text-primary-foreground sticky bottom-4 flex items-center gap-2 px-6 py-3"
+          data-scroll-to="tickets"
+        >
+          <Ticket className="w-5 h-5" /> Grab Your Pass Now
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Applicant Discount Section */}
       <ApplicantDiscountSection />
@@ -337,7 +354,7 @@ export default function DandiyaNightLanding() {
                 <MessageCircle className="h-12 w-12 text-primary mx-auto mb-4" />
                 <h3 className="font-semibold mb-4">WhatsApp Support</h3>
                 <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-                  <Button className="bg-green-600 hover:bg-green-700 text-white">📲 Chat with Us</Button>
+                  <Button className="bg-green-600 hover:bg-green-700 text-white"> Chat with Us</Button>
                 </a>
               </CardContent>
             </Card>
