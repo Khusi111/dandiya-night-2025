@@ -1,5 +1,5 @@
 'use client'
-
+import { Ticket, Camera, AlertTriangle, CheckCircle, Flame, ArrowRight } from "lucide-react"
 import { useEffect } from 'react'
 import ApplicantDiscountSection from "@/components/ApplicantDiscountSection"
 import { Button } from "@/components/ui/button"
@@ -25,41 +25,69 @@ export default function DandiyaNightLanding() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-emerald-50 to-green-100 overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/vibrant-dandiya-garba-dancers-celebration-festival.jpg')] bg-cover bg-center opacity-20"></div>
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="mb-6">
-            <Badge className="text-lg px-4 py-2 bg-primary text-primary-foreground">
-              ✨ Bhubaneswar's Biggest Celebration ✨
-            </Badge>
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-balance">
-            <span className="text-primary">Dandiya Night</span><br />
-            <span className="text-foreground">Bhubaneswar 2025</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 text-muted-foreground text-pretty">
-            Dance | Music | Fun | Unlimited Celebrations – A Night to Remember 💃🕺
-          </p>
+  {/* Background Overlay */}
+  <div className="absolute inset-0">
+    <div className="absolute inset-0 bg-[url('/vibrant-dandiya-garba-dancers-celebration-festival.jpg')] bg-cover bg-center opacity-20"></div>
+    <div className="absolute inset-0 bg-gradient-to-b from-white/40 to-white/70"></div>
+  </div>
 
-          <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-4 text-foreground">Limited Passes – Offer Ends in:</h3>
-            <CountdownTimer targetDate="2025-10-15T23:59:59" />
-          </div>
+  {/* Content */}
+  <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+    {/* Main Badge */}
+    <div className="mb-4">
+      <Badge className="text-lg px-4 py-2 bg-primary text-primary-foreground shadow-lg rounded-full">
+        Bhubaneswar's Biggest Celebration
+      </Badge>
+    </div>
 
-          <Button
-            size="lg"
-            className="text-xl px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground"
-            data-scroll-to="tickets"
-          >
-            👉 Book Your Pass Now
-          </Button>
-        </div>
-      </section>
+    {/* Family-Friendly Badge */}
+    <div className="mb-6 flex justify-center">
+  <Badge className="text-base px-3 py-1 bg-secondary text-secondary-foreground shadow-md rounded-full flex items-center gap-2">
+    <Users className="w-5 h-5" /> Family-Friendly Event
+  </Badge>
+</div>
+
+
+    {/* Headline */}
+    <h1 className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+      Get Ready Bhubaneswar!<br />The Biggest Dandiya Night is Here!
+    </h1>
+
+    {/* Sub-headline */}
+    <p className="text-xl md:text-2xl mb-6 text-muted-foreground">
+      Dance | Music | Fun | Unlimited Celebrations – A Night to Remember
+    </p>
+
+    {/* CTA Button */}
+    <div className="flex justify-center mb-10">
+      <Button
+        size="lg"
+        className="text-xl px-8 py-4 bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg rounded-xl flex items-center gap-2"
+        data-scroll-to="tickets"
+      >
+        <Ticket className="w-5 h-5" /> Book Your Pass Now
+      </Button>
+    </div>
+
+    {/* Countdown */}
+    <div>
+      <h3 className="text-lg font-semibold mb-4 text-foreground">
+        Limited Passes – Offer Ends in:
+      </h3>
+      <CountdownTimer targetDate="2025-10-15T23:59:59" />
+    </div>
+  </div>
+</section>
+
 
       {/* Event Details Section */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">🎶 Event Details</h2>
+            <h2 className="text-4xl font-bold mb-4 text-foreground flex items-center justify-center gap-2">
+  <Music className="h-8 w-8 text-primary" /> Event Details
+</h2>
+
             <p className="text-xl text-muted-foreground">Everything you need to know about the celebration</p>
           </div>
 
@@ -131,8 +159,9 @@ export default function DandiyaNightLanding() {
 
           <div className="text-center mt-8">
             <Button className="bg-primary hover:bg-primary/90 text-primary-foreground" data-scroll-to="tickets">
-              ✅ Reserve Your Spot
-            </Button>
+  <CheckCircle className="h-5 w-5 mr-2" /> Reserve Your Spot
+</Button>
+
           </div>
         </div>
       </section>
@@ -141,7 +170,10 @@ export default function DandiyaNightLanding() {
       <section id="tickets" className="py-16 px-4 bg-muted/50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">🎟️ Ticket & Offers</h2>
+            <h2 className="text-4xl font-bold mb-4 text-foreground flex items-center justify-center gap-2">
+  <Ticket className="h-8 w-8 text-primary" /> Ticket & Offers
+</h2>
+
             <p className="text-xl text-muted-foreground">Choose your perfect pass</p>
           </div>
 
@@ -227,7 +259,10 @@ export default function DandiyaNightLanding() {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">📸 Last Year's Celebration</h2>
+            <h2 className="text-4xl font-bold mb-4 text-foreground flex items-center justify-center gap-2">
+  <Camera className="h-8 w-8 text-primary" /> Last Year's Celebration
+</h2>
+
             <p className="text-xl text-muted-foreground">See what you missed!</p>
           </div>
 
@@ -267,23 +302,18 @@ export default function DandiyaNightLanding() {
       {/* Urgency Section */}
       <section className="py-16 px-4 bg-primary text-primary-foreground">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">⚠️ Passes Selling Out Fast!</h2>
-          <p className="text-xl mb-8">Don't Miss the Biggest Celebration of the Year</p>
+          <h2 className="text-4xl font-bold mb-6 flex items-center justify-center gap-2">
+  <AlertTriangle className="h-8 w-8" /> Passes Selling Out Fast!
+</h2>
+<Button
+  size="lg"
+  variant="secondary"
+  className="text-xl px-8 py-4 flex items-center gap-2"
+  data-scroll-to="tickets"
+>
+  <Flame className="h-6 w-6" /> Book Your Pass Today
+</Button>
 
-          <div className="mb-8 flex justify-center">
-            <div className="bg-black/70 text-white px-6 py-3 rounded-lg shadow-lg inline-block">
-              <CountdownTimer targetDate="2025-10-15T23:59:59" />
-            </div>
-          </div>
-
-          <Button
-            size="lg"
-            variant="secondary"
-            className="text-xl px-8 py-4"
-            data-scroll-to="tickets"
-          >
-            🔥 Book Your Pass Today
-          </Button>
         </div>
       </section>
 
@@ -291,7 +321,10 @@ export default function DandiyaNightLanding() {
       <section className="py-16 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-foreground">📞 Contact & Support</h2>
+            <h2 className="text-4xl font-bold mb-4 text-foreground flex items-center justify-center gap-2">
+  <Phone className="h-8 w-8 text-primary" /> Contact & Support
+</h2>
+
             <p className="text-xl text-muted-foreground">Need help? We're here for you!</p>
           </div>
 
