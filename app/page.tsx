@@ -305,14 +305,17 @@ export default function DandiyaNightLanding() {
           <h2 className="text-4xl font-bold mb-6 flex items-center justify-center gap-2">
   <AlertTriangle className="h-8 w-8" /> Passes Selling Out Fast!
 </h2>
-<Button
-  size="lg"
-  variant="secondary"
-  className="text-xl px-8 py-4 flex items-center gap-2"
-  data-scroll-to="tickets"
->
-  <Flame className="h-6 w-6" /> Book Your Pass Today
-</Button>
+<div className="flex justify-center mb-10">
+  <Button
+    size="lg"
+    variant="secondary"
+    className="text-xl px-8 py-4 flex items-center gap-4"
+    data-scroll-to="tickets"
+  >
+    <Flame className="h-6 w-6" /> Book Your Pass Today
+  </Button>
+</div>
+
 
         </div>
       </section>
