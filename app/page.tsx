@@ -88,18 +88,21 @@ export default function DandiyaNightLanding() {
     </div>
 
     {/* Countdown */}
-    <div>
-      <h3 className="text-lg font-semibold mb-4 text-[#B21D00]">
-        Limited Passes – Offer Ends in:
-      </h3>
-      <CountdownTimer targetDate="2025-09-29T23:59:59" />
-    </div>
+    {/* Countdown */}
+<div>
+  <h3 className="text-lg font-semibold mb-4 text-[#B21D00]">
+    Limited Passes – Offer Ends in:
+  </h3>
+  <CountdownTimer targetDate="2025-09-29T23:59:59" />
+</div>
 
-    {/* Scroll Arrow */}
-    <div className="absolute bottom-10">
-      <span className="block w-6 h-6 border-b-2 border-r-2 border-[#B21D00] transform rotate-45 mx-auto animate-bounce"></span>
-    </div>
-  </div>
+{/* Scroll Arrow (moved below countdown) */}
+<div className="mt-8">
+  <span className="block w-6 h-6 border-b-2 border-r-2 border-[#B21D00] transform rotate-45 mx-auto animate-bounce"></span>
+</div>
+
+</div>
+
 </section>
 
 
@@ -280,7 +283,7 @@ export default function DandiyaNightLanding() {
     {/* Ticket Cards */}
     <div className="grid md:grid-cols-3 gap-6 mb-8 text-left">
       
-      {/* Early Bird */}
+      {/* Event Pass */}
       <motion.div
         className="border-2 border-[#B21D00]/40 rounded-xl relative flex flex-col justify-between bg-white p-6 shadow-md hover:shadow-lg transition-transform duration-300"
         whileHover={{ scale: 1.05 }}
@@ -292,9 +295,12 @@ export default function DandiyaNightLanding() {
         <div>
           <h3 className="text-2xl font-bold text-[#B21D00] mb-1">Event Pass</h3>
           <p className="text-gray-800 mb-4">Valid till October 1st</p>
-          <div className="text-4xl font-bold text-[#B21D00] mb-4">₹1499</div>
+          <div className="text-3xl font-bold mb-4">
+            <span className="line-through text-gray-500 mr-2">₹1499</span>
+            <span className="text-[#B21D00]">₹1299</span>
+          </div>
           <ul className="text-gray-700 text-sm space-y-2 mb-6">
-            <li>✓ for 1 People</li>
+            <li>✓ For 1 Person</li>
             <li>✓ Live DJ</li>
             <li>✓ Dreamy Ambience</li>
             <li>✓ Live Games And Prizes</li>
@@ -305,7 +311,7 @@ export default function DandiyaNightLanding() {
         </div>
         <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
           <button className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg transition-colors">
-            Get Early Bird Pass
+            Get Event Pass
           </button>
         </a>
       </motion.div>
@@ -321,7 +327,10 @@ export default function DandiyaNightLanding() {
         <div>
           <h3 className="text-2xl font-bold text-[#B21D00] mb-1">Couple Pass</h3>
           <p className="text-gray-800 mb-4">Perfect for two</p>
-          <div className="text-4xl font-bold text-[#B21D00] mb-4">₹2799</div>
+          <div className="text-3xl font-bold mb-4">
+            <span className="line-through text-gray-500 mr-2">₹2799</span>
+            <span className="text-[#B21D00]">₹2399</span>
+          </div>
           <ul className="text-gray-700 text-sm space-y-2 mb-6">
             <li>✓ For Couple</li>
             <li>✓ Live DJ</li>
@@ -339,7 +348,7 @@ export default function DandiyaNightLanding() {
         </a>
       </motion.div>
 
-      {/* Group Pass */}
+      {/* VIP Pass */}
       <motion.div
         className="border-2 border-[#B21D00]/40 rounded-xl relative flex flex-col justify-between bg-white p-6 shadow-md hover:shadow-lg transition-transform duration-300"
         whileHover={{ scale: 1.05 }}
@@ -350,8 +359,11 @@ export default function DandiyaNightLanding() {
         <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#B21D00] text-white px-3 py-1 rounded-full font-semibold text-sm">Best Value</span>
         <div>
           <h3 className="text-2xl font-bold text-[#B21D00] mb-1">VIP Pass</h3>
-          <p className="text-gray-800 mb-4">5 People - Special Discount</p>
-          <div className="text-4xl font-bold text-[#B21D00] mb-4">₹15999</div>
+          <p className="text-gray-800 mb-4">6 People - Special Discount</p>
+          <div className="text-3xl font-bold mb-4">
+            <span className="line-through text-gray-500 mr-2">₹15999</span>
+            <span className="text-[#B21D00]">₹13999</span>
+          </div>
           <ul className="text-gray-700 text-sm space-y-2 mb-6">
             <li>✓ Entry For 6 People</li>
             <li>✓ Live DJ</li>
@@ -365,7 +377,7 @@ export default function DandiyaNightLanding() {
         </div>
         <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
           <button className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg transition-colors">
-            Get Group Pass
+            Get VIP Pass
           </button>
         </a>
       </motion.div>
@@ -391,6 +403,7 @@ export default function DandiyaNightLanding() {
     </motion.div>
   </div>
 </section>
+
 
 
 
