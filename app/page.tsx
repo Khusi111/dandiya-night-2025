@@ -87,12 +87,13 @@ export default function DandiyaNightLanding() {
   whileHover={{ scale: 1.05 }}
 >
   <Button
-    size="lg"
-    className="text-2xl px-10 py-5 bg-[#B21D00] hover:bg-[#8a1500] text-white shadow-xl rounded-2xl font-bold"
-    data-scroll-to="tickets"
-  >
-    Book Your Pass Now
-  </Button>
+  size="lg"
+  className="text-2xl px-10 py-5 bg-[#B21D00] hover:bg-[#8a1500] text-white shadow-xl rounded-[10px] font-bold"
+  data-scroll-to="tickets"
+>
+  Book Your Pass Now
+</Button>
+
 </motion.div>
 
 
