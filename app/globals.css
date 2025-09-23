@@ -5,8 +5,8 @@
 
 :root {
   /* Updated color scheme for festive Dandiya Night theme */
-  --background: oklch(0.145 0 0); /* dark */
-  --foreground: oklch(0.985 0 0); /* light */
+  --background: oklch(0.98 0 0); /* Light cream background for the page */
+  --foreground: oklch(0.15 0 0); /* Dark text color (#333) */
 
   --card: oklch(0.98 0 0); /* Light card background */
   --card-foreground: oklch(0.35 0 0); /* Dark text on cards */
