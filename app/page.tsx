@@ -301,6 +301,7 @@ export default function DandiyaNightLanding() {
           </div>
           <ul className="text-gray-700 text-sm space-y-2 mb-6">
             <li>✓ For 1 Person</li>
+            <li>✓ Unlimited Food</li>
             <li>✓ Live DJ</li>
             <li>✓ Dreamy Ambience</li>
             <li>✓ Live Games And Prizes</li>
@@ -333,6 +334,7 @@ export default function DandiyaNightLanding() {
           </div>
           <ul className="text-gray-700 text-sm space-y-2 mb-6">
             <li>✓ For Couple</li>
+            <li>✓ Unlimited Food</li>
             <li>✓ Live DJ</li>
             <li>✓ Dreamy Ambience</li>
             <li>✓ Live Games And Prizes</li>
@@ -366,6 +368,7 @@ export default function DandiyaNightLanding() {
           </div>
           <ul className="text-gray-700 text-sm space-y-2 mb-6">
             <li>✓ Entry For 6 People</li>
+            <li>✓ Unlimited Food</li>
             <li>✓ Live DJ</li>
             <li>✓ Dreamy Ambience</li>
             <li>✓ Live Games And Prizes</li>
