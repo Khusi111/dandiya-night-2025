@@ -141,10 +141,10 @@ export default function DandiyaNightLanding() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <Card className="bg-[#111] border-2 border-[#F59E0B]/40 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <Card className="bg-[#111] border-2 border-[#F59E0B]/40 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 h-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-[#F59E0B] text-xl">
-              <MapPin className="h-6 w-6" /> Venue & Location
+              <MapPin className="h-6 w-6 animate-bounce" /> Venue & Location
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -168,10 +168,10 @@ export default function DandiyaNightLanding() {
         transition={{ duration: 0.7 }}
         viewport={{ once: true }}
       >
-        <Card className="bg-[#111] border-2 border-[#F59E0B]/40 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <Card className="bg-[#111] border-2 border-[#F59E0B]/40 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 h-full">
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-[#F59E0B] text-xl">
-              <Calendar className="h-6 w-6" /> Date & Time
+              <Calendar className="h-6 w-6 animate-bounce" /> Date & Time
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -207,7 +207,7 @@ export default function DandiyaNightLanding() {
             transition={{ duration: 0.5, delay: index * 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className="bg-[#111] border-2 border-[#F59E0B]/30 rounded-xl shadow-md hover:shadow-lg transition-transform duration-300">
+            <Card className="bg-[#111] border-2 border-[#F59E0B]/30 rounded-xl shadow-md hover:shadow-lg transition-transform duration-300 h-full">
               <CardContent className="pt-6">
                 <h4 className="font-semibold mb-2 text-lg text-[#F59E0B]">{schedule.day}</h4>
                 <p className="text-gray-300"><b>Performers:</b> {schedule.performers}</p>
@@ -222,9 +222,9 @@ export default function DandiyaNightLanding() {
       <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-12">
         {[
           { icon: <Music className="h-12 w-12 text-[#F59E0B] mx-auto mb-4 animate-bounce" />, title: "Live DJ + Dandiya Beats", desc: "Non-stop music all night" },
-          { icon: <Users className="h-12 w-12 text-[#F59E0B] mx-auto mb-4" />, title: "Traditional Garba Performances", desc: "Authentic cultural shows" },
-          { icon: <Utensils className="h-12 w-12 text-[#F59E0B] mx-auto mb-4" />, title: "Food & Beverages Stalls", desc: "Delicious festive treats" },
-          { icon: <Trophy className="h-12 w-12 text-[#F59E0B] mx-auto mb-4" />, title: "Exciting Contests & Prizes", desc: "Win amazing rewards" },
+          { icon: <Users className="h-12 w-12 text-[#F59E0B] mx-auto mb-4 animate-bounce" />, title: "Traditional Garba Performances", desc: "Authentic cultural shows" },
+          { icon: <Utensils className="h-12 w-12 text-[#F59E0B] mx-auto mb-4 animate-bounce" />, title: "Food & Beverages Stalls", desc: "Delicious festive treats" },
+          { icon: <Trophy className="h-12 w-12 text-[#F59E0B] mx-auto mb-4 animate-bounce" />, title: "Exciting Contests & Prizes", desc: "Win amazing rewards" },
         ].map((item, idx) => (
           <motion.div
             key={idx}
@@ -233,7 +233,7 @@ export default function DandiyaNightLanding() {
             transition={{ duration: 0.5, delay: idx * 0.2 }}
             viewport={{ once: true }}
           >
-            <Card className="text-center bg-[#111] border-2 border-[#F59E0B]/30 rounded-xl shadow-md hover:shadow-lg transition-transform duration-300">
+            <Card className="text-center bg-[#111] border-2 border-[#F59E0B]/30 rounded-xl shadow-md hover:shadow-lg transition-transform duration-300 h-full">
               <CardContent className="pt-6">
                 {item.icon}
                 <h3 className="font-semibold mb-2 text-[#F59E0B]">{item.title}</h3>
@@ -246,6 +246,7 @@ export default function DandiyaNightLanding() {
     </motion.div>
   </div>
 </section>
+
 
 
       
