@@ -138,30 +138,31 @@ export default function DandiyaNightLanding() {
     <div className="grid md:grid-cols-2 gap-10 mb-16">
       {/* Venue */}
       <motion.div
-        initial={{ opacity: 0, x: -80 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
-      >
-        <Card className="bg-white border-2 border-[#B21D00]/40 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 h-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-[#B21D00] text-xl">
-              <MapPin className="h-6 w-6 animate-bounce" /> Venue & Location
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-lg font-bold text-[#B21D00] mb-2">Kalinga Stadium Grounds</p>
-            <p className="text-gray-800 mb-4">Bhubaneswar, Odisha</p>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=YOUR_GOOGLE_MAPS_EMBED_LINK"
-              width="100%"
-              height="250"
-              loading="lazy"
-              className="mt-4 rounded-lg border border-[#B21D00]/30"
-            ></iframe>
-          </CardContent>
-        </Card>
-      </motion.div>
+  initial={{ opacity: 0, x: -80 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+>
+  <Card className="bg-white border-2 border-[#B21D00]/40 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 h-full">
+    <CardHeader>
+      <CardTitle className="flex items-center gap-2 text-[#B21D00] text-xl">
+        <MapPin className="h-6 w-6 animate-bounce" /> Venue & Location
+      </CardTitle>
+    </CardHeader>
+    <CardContent>
+      <p className="text-lg font-bold text-[#B21D00] mb-2">Kalinga Stadium Grounds</p>
+      <p className="text-gray-800 mb-4">Bhubaneswar, Odisha</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.728257371574!2d85.82005907570638!3d20.293778386416667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190ad7a5fdfbfb%3A0x5a2f9d0a9a9f5c03!2sKalinga%20Stadium!5e0!3m2!1sen!2sin!4v1695480000000!5m2!1sen!2sin"
+        width="100%"
+        height="250"
+        loading="lazy"
+        className="mt-4 rounded-lg border border-[#B21D00]/30"
+      ></iframe>
+    </CardContent>
+  </Card>
+</motion.div>
+
 
       {/* Date & Time */}
       <motion.div
