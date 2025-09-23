@@ -1,5 +1,6 @@
 'use client'
 import { motion } from "framer-motion";
+import ImageCarousel from "@/components/ImageCarousel";
 import { Ticket, Camera, AlertTriangle, CheckCircle, Flame, ArrowRight, } from "lucide-react"
 import { useEffect } from 'react'
 import ApplicantDiscountSection from "@/components/ApplicantDiscountSection"
@@ -25,89 +26,78 @@ export default function DandiyaNightLanding() {
     <div className="min-h-screen bg-background scroll-smooth">
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center bg-[#FFF8F0] overflow-hidden">
+      <section
+  id="hero"
+  className="relative min-h-[120vh] flex flex-col items-center justify-center bg-[#FFF8F0] overflow-hidden"
+>
   {/* Background Overlay */}
   <div className="absolute inset-0">
     <div className="absolute inset-0 bg-[url('/vibrant-dandiya-garba-dancers-celebration-festival.jpg')] bg-cover bg-center opacity-80"></div>
     <div className="absolute inset-0 bg-gradient-to-b from-[#FFF8F0]/40 to-[#FFF8F0]/70"></div>
+
+    {/* Floating Bokeh/Particles */}
+    <div className="absolute inset-0 pointer-events-none">
+      <div className="w-96 h-96 bg-[#FFD9D4] rounded-full opacity-20 absolute top-10 left-10 animate-bounce-slow"></div>
+      <div className="w-72 h-72 bg-[#B21D00] rounded-full opacity-10 absolute bottom-20 right-20 animate-bounce-slow"></div>
+    </div>
   </div>
 
   {/* Content */}
-  <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-    {/* Main Badge */}
-    <motion.div
-      className="mb-4"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-    >
-      <Badge className="text-lg px-4 py-2 bg-[#B21D00] text-white shadow-lg rounded-full">
-        Bhubaneswar's Biggest Celebration
-      </Badge>
-    </motion.div>
-
-    {/* Family-Friendly Badge */}
-    <motion.div
-      className="mb-6 flex justify-center"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.2 }}
-    >
-      <Badge className="text-base px-3 py-1 bg-[#FFD9D4] text-[#B21D00] shadow-md rounded-full flex items-center gap-2">
-        <Users className="w-5 h-5 text-[#B21D00]" /> Family-Friendly Event
-      </Badge>
-    </motion.div>
-
+  <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center gap-8">
+    
     {/* Headline */}
-    <motion.h1
-      className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-[#B21D00]"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.4 }}
-    >
-      Get Ready Bhubaneswar!<br />The Biggest Dandiya Night is Here!
-    </motion.h1>
+    <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-[#B21D00] drop-shadow-lg mt-10">
+      Get Ready Bhubaneswar!<br />
+      The Biggest Dandiya Night is Here!
+    </h1>
 
     {/* Sub-headline */}
-    <motion.p
-      className="text-xl md:text-2xl mb-6 text-gray-800"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 0.6 }}
-    >
+    <p className="text-xl md:text-2xl text-gray-800 drop-shadow-sm">
       Dance | Music | Fun | Unlimited Celebrations – A Night to Remember
-    </motion.p>
+    </p>
+
+    {/* IMAGE CAROUSEL */}
+    <div className="w-full max-w-5xl mb-10 mt-6">
+      <ImageCarousel
+        images={[
+          '/carousel1.jpg',
+          '/carousel2.jpg',
+          '/carousel3.jpg',
+          '/carousel4.jpg',
+          '/carousel5.jpg',
+          '/carousel6.jpg',
+          '/carousel7.jpg',
+        ]}
+        showCount={3}      // show 3 images at once
+        gap={16}           // spacing between images
+        autoSlideInterval={3000} // auto slide every 3 sec
+        arrows             // enable left/right arrows
+      />
+    </div>
 
     {/* CTA Button */}
-    <motion.div
-  className="flex justify-center mb-10"
-  initial={{ opacity: 0, scale: 0.8 }}
-  animate={{ opacity: 1, scale: 1 }}
-  transition={{ duration: 0.8, delay: 0.8 }}
-  whileHover={{ scale: 1.05 }}
->
-  <Button
-  size="lg"
-  className="text-2xl px-10 py-5 bg-[#B21D00] hover:bg-[#8a1500] text-white shadow-xl rounded-[10px] font-bold"
-  data-scroll-to="tickets"
->
-  Book Your Pass Now
-</Button>
-
-</motion.div>
-
+    <div className="flex justify-center mb-10">
+      <Button
+        size="lg"
+        className="text-2xl px-10 py-5 bg-gradient-to-r from-[#B21D00] to-[#FF5733] hover:from-[#8a1500] hover:to-[#FF8A65] text-white shadow-2xl rounded-xl font-bold transform transition-all duration-300"
+        data-scroll-to="tickets"
+      >
+        Book Your Pass Now
+      </Button>
+    </div>
 
     {/* Countdown */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, delay: 1 }}
-    >
+    <div>
       <h3 className="text-lg font-semibold mb-4 text-[#B21D00]">
         Limited Passes – Offer Ends in:
       </h3>
-      <CountdownTimer targetDate="2025-10-15T23:59:59" />
-    </motion.div>
+      <CountdownTimer targetDate="2025-09-29T23:59:59" />
+    </div>
+
+    {/* Scroll Arrow */}
+    <div className="absolute bottom-10">
+      <span className="block w-6 h-6 border-b-2 border-r-2 border-[#B21D00] transform rotate-45 mx-auto animate-bounce"></span>
+    </div>
   </div>
 </section>
 
@@ -115,8 +105,6 @@ export default function DandiyaNightLanding() {
 
 
 
-      
-   
 
 <section id="details" className="py-20 px-6 bg-[#FFF8F0]">
   <div className="max-w-6xl mx-auto">
@@ -137,33 +125,33 @@ export default function DandiyaNightLanding() {
 
     {/* Info Cards */}
     <div className="grid md:grid-cols-2 gap-10 mb-16">
+
       {/* Venue */}
       <motion.div
-  initial={{ opacity: 0, x: -80 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.7 }}
-  viewport={{ once: true }}
->
-  <Card className="bg-white border-2 border-[#B21D00]/40 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 h-full">
-    <CardHeader>
-      <CardTitle className="flex items-center gap-2 text-[#B21D00] text-xl">
-        <MapPin className="h-6 w-6 animate-bounce" /> Venue & Location
-      </CardTitle>
-    </CardHeader>
-    <CardContent>
-      <p className="text-lg font-bold text-[#B21D00] mb-2">Kalinga Stadium Grounds</p>
-      <p className="text-gray-800 mb-4">Bhubaneswar, Odisha</p>
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.728257371574!2d85.82005907570638!3d20.293778386416667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190ad7a5fdfbfb%3A0x5a2f9d0a9a9f5c03!2sKalinga%20Stadium!5e0!3m2!1sen!2sin!4v1695480000000!5m2!1sen!2sin"
-        width="100%"
-        height="250"
-        loading="lazy"
-        className="mt-4 rounded-lg border border-[#B21D00]/30"
-      ></iframe>
-    </CardContent>
-  </Card>
-</motion.div>
-
+        initial={{ opacity: 0, x: -80 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.7 }}
+        viewport={{ once: true }}
+      >
+        <Card className="bg-white border-2 border-[#B21D00]/40 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 h-full">
+          <CardHeader>
+            <CardTitle className="flex items-center gap-2 text-[#B21D00] text-xl">
+              <MapPin className="h-6 w-6 animate-bounce" /> Venue & Location
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p className="text-lg font-bold text-[#B21D00] mb-2">Kalinga Stadium Grounds</p>
+            <p className="text-gray-800 mb-4">Bhubaneswar, Odisha</p>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.728257371574!2d85.82005907570638!3d20.293778386416667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190ad7a5fdfbfb%3A0x5a2f9d0a9a9f5c03!2sKalinga%20Stadium!5e0!3m2!1sen!2sin!4v1695480000000!5m2!1sen!2sin"
+              width="100%"
+              height="250"
+              loading="lazy"
+              className="mt-4 rounded-lg border border-[#B21D00]/30"
+            ></iframe>
+          </CardContent>
+        </Card>
+      </motion.div>
 
       {/* Date & Time */}
       <motion.div
@@ -178,16 +166,33 @@ export default function DandiyaNightLanding() {
               <Calendar className="h-6 w-6 animate-bounce" /> Date & Time
             </CardTitle>
           </CardHeader>
-          <CardContent>
-            <p className="text-lg font-bold text-[#B21D00] mb-2">October 15 – 17, 2025</p>
-            <p className="text-gray-800 mb-4">7:00 PM - 12:00 AM</p>
-            <input
-              type="date"
-              className="w-full px-3 py-2 rounded-lg border border-[#B21D00]/40 bg-white text-gray-900 focus:ring-2 focus:ring-[#B21D00] transition-all"
-            />
+          <CardContent className="flex flex-col gap-4">
+            <div className="flex items-center gap-4">
+              <select
+                id="event-day"
+                className="w-full px-3 py-2 rounded-lg border border-[#B21D00]/40 bg-white text-gray-900 focus:ring-2 focus:ring-[#B21D00] transition-all"
+              >
+                <option value="2025-09-29">Sep 29, 2025</option>
+                <option value="2025-09-30">Sep 30, 2025</option>
+                <option value="2025-10-01">Oct 1, 2025</option>
+              </select>
+
+              <button
+                onClick={() => {
+                  const daySelect = document.getElementById("event-day") as HTMLSelectElement;
+                  const selectedDay = daySelect.value;
+                  window.location.href = `/pass?day=${selectedDay}`;
+                }}
+                className="px-4 py-2 bg-[#B21D00] text-white font-semibold rounded-lg hover:bg-[#9e1700] transition"
+              >
+                Book Now
+              </button>
+            </div>
+            <p className="text-gray-800 mt-2">7:00 PM - 12:00 AM</p>
           </CardContent>
         </Card>
       </motion.div>
+
     </div>
 
     {/* Daily Schedule */}
@@ -200,9 +205,9 @@ export default function DandiyaNightLanding() {
       <h3 className="text-3xl font-bold mb-8 text-center text-[#B21D00]">📅 Daily Schedule</h3>
       <div className="grid md:grid-cols-3 gap-6">
         {[
-          { day: "Day 1 - Oct 15", performers: "DJ Arjun, Garba Troupe", food: "Gujarati Thali, Street Snacks" },
-          { day: "Day 2 - Oct 16", performers: "Singer XYZ, Dance Group", food: "Chats, Fusion Dishes" },
-          { day: "Day 3 - Oct 17", performers: "Celebrity Guest, Folk Band", food: "Multi-cuisine Festival Stalls" },
+          { day: "Day 1 - Sep 29", performers: "Emcee Pinkie, DJ Ryan", food: "Gujarati Thali, Street Snacks" },
+          { day: "Day 2 - Sep 30", performers: "Emcee Pupul, DJ Priti", food: "Chats, Fusion Dishes" },
+          { day: "Day 3 - Oct 1", performers: "Emcee Rajiv, Partho", food: "Multi-cuisine Festival Stalls" },
         ].map((schedule, index) => (
           <motion.div
             key={index}
@@ -248,13 +253,12 @@ export default function DandiyaNightLanding() {
         ))}
       </div>
     </motion.div>
+
   </div>
 </section>
 
 
 
-
-      
 
       {/* Ticket & Offers Section */}
 <section id="tickets" className="py-16 px-4 bg-[#FFF8F0]">
@@ -285,13 +289,17 @@ export default function DandiyaNightLanding() {
       >
         <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#B21D00] text-white px-3 py-1 rounded-full font-semibold text-sm">Early Bird</span>
         <div>
-          <h3 className="text-2xl font-bold text-[#B21D00] mb-1">Early Bird Pass</h3>
+          <h3 className="text-2xl font-bold text-[#B21D00] mb-1">Event Pass</h3>
           <p className="text-gray-800 mb-4">Valid till October 1st</p>
-          <div className="text-4xl font-bold text-[#B21D00] mb-4">₹299</div>
+          <div className="text-4xl font-bold text-[#B21D00] mb-4">₹1499</div>
           <ul className="text-gray-700 text-sm space-y-2 mb-6">
-            <li>✓ Entry to all events</li>
-            <li>✓ Welcome drink</li>
-            <li>✓ Dandiya sticks included</li>
+            <li>✓ for 1 People</li>
+            <li>✓ Live DJ</li>
+            <li>✓ Dreamy Ambience</li>
+            <li>✓ Live Games And Prizes</li>
+            <li>✓ Open Area Dandiya</li>
+            <li>✓ Dandiya Sticks Included</li>
+            <li>✓ Photography</li>
           </ul>
         </div>
         <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
@@ -312,12 +320,15 @@ export default function DandiyaNightLanding() {
         <div>
           <h3 className="text-2xl font-bold text-[#B21D00] mb-1">Couple Pass</h3>
           <p className="text-gray-800 mb-4">Perfect for two</p>
-          <div className="text-4xl font-bold text-[#B21D00] mb-4">₹499</div>
+          <div className="text-4xl font-bold text-[#B21D00] mb-4">₹2799</div>
           <ul className="text-gray-700 text-sm space-y-2 mb-6">
-            <li>✓ Entry for 2 people</li>
-            <li>✓ Welcome drinks</li>
-            <li>✓ Dandiya sticks for both</li>
-            <li>✓ Couple photo session</li>
+            <li>✓ For Couple</li>
+            <li>✓ Live DJ</li>
+            <li>✓ Dreamy Ambience</li>
+            <li>✓ Live Games And Prizes</li>
+            <li>✓ Open Area Dandiya</li>
+            <li>✓ Dandiya Sticks Included</li>
+            <li>✓ Photography</li>
           </ul>
         </div>
         <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
@@ -337,15 +348,18 @@ export default function DandiyaNightLanding() {
       >
         <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#B21D00] text-white px-3 py-1 rounded-full font-semibold text-sm">Best Value</span>
         <div>
-          <h3 className="text-2xl font-bold text-[#B21D00] mb-1">Group Pass</h3>
+          <h3 className="text-2xl font-bold text-[#B21D00] mb-1">VIP Pass</h3>
           <p className="text-gray-800 mb-4">5 People - Special Discount</p>
-          <div className="text-4xl font-bold text-[#B21D00] mb-4">₹999</div>
+          <div className="text-4xl font-bold text-[#B21D00] mb-4">₹15999</div>
           <ul className="text-gray-700 text-sm space-y-2 mb-6">
-            <li>✓ Entry for 5 people</li>
-            <li>✓ Welcome drinks for all</li>
-            <li>✓ Dandiya sticks included</li>
-            <li>✓ Group photo session</li>
-            <li>✓ Priority seating</li>
+            <li>✓ Entry For 6 People</li>
+            <li>✓ Live DJ</li>
+            <li>✓ Dreamy Ambience</li>
+            <li>✓ Live Games And Prizes</li>
+            <li>✓ Open Area Dandiya</li>
+            <li>✓ Dandiya Sticks Included</li>
+            <li>✓ Photography</li>
+            <li>✓ Exclusive Seating</li>
           </ul>
         </div>
         <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
@@ -386,78 +400,7 @@ export default function DandiyaNightLanding() {
 
 
       {/* Social Proof Section */}
-      {/* Last Year's Celebration Section */}
-<section className="py-16 px-4 bg-[#FFF8F0] text-gray-800">
-  <div className="max-w-6xl mx-auto">
-    {/* Section Heading */}
-    <motion.div
-      className="text-center mb-12"
-      initial={{ opacity: 0, y: -30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8 }}
-      viewport={{ once: true }}
-    >
-      <h2 className="text-4xl font-bold mb-4 flex items-center justify-center gap-2 text-[#B21D00]">
-        <Camera className="h-8 w-8 text-[#B21D00] animate-bounce" /> Last Year's Celebration
-      </h2>
-      <p className="text-xl text-gray-700">See what you missed!</p>
-    </motion.div>
-
-    {/* Gallery Images */}
-    <div className="grid md:grid-cols-3 gap-6 mb-12">
-      {[
-        { src: "/dandiya-dance-celebration-crowd-festival.jpg", alt: "Dandiya celebration" },
-        { src: "/garba-dancers-traditional-costumes-festival.jpg", alt: "Garba dancers" },
-        { src: "/festival-lights-food-stalls-celebration.jpg", alt: "Festival atmosphere" },
-      ].map((img, idx) => (
-        <motion.div
-          key={idx}
-          className="relative rounded-lg overflow-hidden shadow-lg"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: idx * 0.2 }}
-          viewport={{ once: true }}
-          whileHover={{ scale: 1.05 }}
-        >
-          <img
-            src={img.src}
-            alt={img.alt}
-            className="w-full h-64 object-cover rounded-lg shadow-md"
-          />
-        </motion.div>
-      ))}
-    </div>
-
-    {/* Testimonials */}
-    <div className="grid md:grid-cols-2 gap-8">
-      {[
-        {
-          text: "Best Dandiya Night in Bhubaneswar! Non-stop fun and amazing energy. Can't wait for this year!",
-          author: "Priya Sharma",
-        },
-        {
-          text: "Perfect family event! Kids loved it, adults had a blast. Great organization and fantastic music!",
-          author: "Rajesh Patel",
-        },
-      ].map((testimonial, idx) => (
-        <motion.div
-          key={idx}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: idx * 0.2 }}
-          viewport={{ once: true }}
-        >
-          <Card className="bg-white border border-[#B21D00]/40 rounded-xl shadow-md hover:shadow-xl transition-transform duration-300 hover:scale-105">
-            <CardContent className="pt-6">
-              <p className="text-gray-800 italic mb-4">"{testimonial.text}"</p>
-              <p className="font-semibold text-[#B21D00]">- {testimonial.author}</p>
-            </CardContent>
-          </Card>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-</section>
+      
 
 {/* Guests & Performers Section */}
 <section className="py-20 px-6 bg-[#FFF8F0] text-gray-800">
@@ -667,7 +610,13 @@ export default function DandiyaNightLanding() {
     <h3 className="text-2xl font-bold mb-2 text-[#B21D00]">Dandiya Night Bhubaneswar 2025</h3>
     <p className="mb-2">The biggest celebration of the year is waiting for you!</p>
     <p className="text-gray-600 mb-4">
-      Email: <a href="mailto:ringsandknotss@gmail.com" className="text-[#B21D00] underline">ringsandknotss@gmail.com</a>
+      Email:{" "}
+      <a
+        href="mailto:ringsandknotss@gmail.com"
+        className="text-[#B21D00] underline"
+      >
+        ringsandknotss@gmail.com
+      </a>
     </p>
 
     {/* Buttons */}
@@ -686,7 +635,12 @@ export default function DandiyaNightLanding() {
         Share Event
       </Button>
 
-      <a href="mailto:ringsandknotss@gmail.com">
+      {/* Contact */}
+      <a
+        href="https://ringsandknots.com/contact/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Button
           variant="outline"
           className="border-[#B21D00] text-[#B21D00] hover:bg-[#B21D00] hover:text-white transition-colors"
@@ -695,7 +649,12 @@ export default function DandiyaNightLanding() {
         </Button>
       </a>
 
-      <a href="/refund-cancellation">
+      {/* Refund & Cancellation */}
+      <a
+        href="https://ringsandknots.com/refund-policy/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Button
           variant="outline"
           className="border-[#B21D00] text-[#B21D00] hover:bg-[#B21D00] hover:text-white transition-colors"
@@ -704,7 +663,12 @@ export default function DandiyaNightLanding() {
         </Button>
       </a>
 
-      <a href="/terms">
+      {/* Terms & Conditions */}
+      <a
+        href="https://ringsandknots.com/terms-conditions/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <Button
           variant="outline"
           className="border-[#B21D00] text-[#B21D00] hover:bg-[#B21D00] hover:text-white transition-colors"
@@ -714,9 +678,30 @@ export default function DandiyaNightLanding() {
       </a>
     </div>
 
-    <p className="mt-6 text-sm text-gray-600">© 2025 Dandiya Night. All rights reserved.</p>
+    <p className="mt-6 text-sm text-gray-600">
+      © 2025 Dandiya Night. All rights reserved.
+    </p>
   </div>
 </footer>
+
+{/* Scroll to Top Button */}
+{/* Scroll to Top Button */}
+<motion.button
+  onClick={() => {
+    const heroSection = document.getElementById("hero");
+    if (heroSection) heroSection.scrollIntoView({ behavior: "smooth" });
+  }}
+  className="fixed bottom-6 right-6 p-4 bg-[#B21D00] text-white rounded-full shadow-lg hover:bg-[#8a1500] flex items-center justify-center"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6 }}
+  whileHover={{ scale: 1.2 }}
+  whileTap={{ scale: 0.95 }}
+>
+  {/* Upward arrow */}
+  <ArrowRight className="w-6 h-6 rotate-[-90deg] animate-bounce" />
+</motion.button>
+
 
 
 
