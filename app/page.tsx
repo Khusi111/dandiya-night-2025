@@ -663,26 +663,62 @@ export default function DandiyaNightLanding() {
 
 {/* Footer */}
 <footer className="bg-[#FFF8F0] text-gray-800 py-12 px-4">
-  <div className="max-w-4xl mx-auto text-center">
-    <h3 className="text-2xl font-bold mb-4 text-[#B21D00]">Dandiya Night Bhubaneswar 2025</h3>
-    <p className="mb-4">The biggest celebration of the year is waiting for you!</p>
-    <div className="flex justify-center gap-4">
+  <div className="max-w-4xl mx-auto text-center space-y-4">
+    <h3 className="text-2xl font-bold mb-2 text-[#B21D00]">Dandiya Night Bhubaneswar 2025</h3>
+    <p className="mb-2">The biggest celebration of the year is waiting for you!</p>
+    <p className="text-gray-600 mb-4">
+      Email: <a href="mailto:ringsandknotss@gmail.com" className="text-[#B21D00] underline">ringsandknotss@gmail.com</a>
+    </p>
+
+    {/* Buttons */}
+    <div className="flex flex-wrap justify-center gap-4">
       <Button
         variant="outline"
-        className="border-[#B21D00] text-[#B21D00] hover:bg-[#B21D00] hover:text-white bg-transparent transition-colors"
+        className="border-[#B21D00] text-[#B21D00] hover:bg-[#B21D00] hover:text-white transition-colors"
       >
         Follow Us
       </Button>
+
       <Button
         variant="outline"
-        className="border-[#B21D00] text-[#B21D00] hover:bg-[#B21D00] hover:text-white bg-transparent transition-colors"
+        className="border-[#B21D00] text-[#B21D00] hover:bg-[#B21D00] hover:text-white transition-colors"
       >
         Share Event
       </Button>
+
+      <a href="mailto:ringsandknotss@gmail.com">
+        <Button
+          variant="outline"
+          className="border-[#B21D00] text-[#B21D00] hover:bg-[#B21D00] hover:text-white transition-colors"
+        >
+          Contact Us
+        </Button>
+      </a>
+
+      <a href="/refund-cancellation">
+        <Button
+          variant="outline"
+          className="border-[#B21D00] text-[#B21D00] hover:bg-[#B21D00] hover:text-white transition-colors"
+        >
+          Refund & Cancellation
+        </Button>
+      </a>
+
+      <a href="/terms">
+        <Button
+          variant="outline"
+          className="border-[#B21D00] text-[#B21D00] hover:bg-[#B21D00] hover:text-white transition-colors"
+        >
+          Terms & Conditions
+        </Button>
+      </a>
     </div>
+
     <p className="mt-6 text-sm text-gray-600">© 2025 Dandiya Night. All rights reserved.</p>
   </div>
 </footer>
+
+
 
     </div>
   )
