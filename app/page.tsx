@@ -52,9 +52,10 @@ export default function DandiyaNightLanding() {
     </h1>
 
     {/* Sub-headline */}
-    <p className="text-xl md:text-2xl text-gray-800 drop-shadow-sm">
-      Dance | Music | Fun | Unlimited Celebrations – A Night to Remember
-    </p>
+    <p className="text-xl md:text-2xl text-gray-800 drop-shadow-sm font-bold">
+  Dance | Music | Fun | Unlimited Celebrations – A Night to Remember
+</p>
+
 
     {/* IMAGE CAROUSEL */}
     <div className="w-full max-w-5xl mb-10 mt-6">
@@ -140,10 +141,10 @@ export default function DandiyaNightLanding() {
             </CardTitle>
           </CardHeader>
           <CardContent>
-            <p className="text-lg font-bold text-[#B21D00] mb-2">Kalinga Stadium Grounds</p>
+            <p className="text-lg font-bold text-[#B21D00] mb-2">AURA LAWNS</p>
             <p className="text-gray-800 mb-4">Bhubaneswar, Odisha</p>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.728257371574!2d85.82005907570638!3d20.293778386416667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a190ad7a5fdfbfb%3A0x5a2f9d0a9a9f5c03!2sKalinga%20Stadium!5e0!3m2!1sen!2sin!4v1695480000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14654.09384107365!2d85.80000000000001!3d20.350000000000005!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a1909c24a862da3%3A0xc885b19a4ff55989!2sAura%20Lawns%2C%20Revenue%20plot%20no%203%2C%20infront%20of%20Hotel%2C%20Shubham%20Grand%2C%20Patia%2C%20Bhubaneswar%2C%20Odisha%20751024!5e0!3m2!1sen!2sin!4v1695479865400!5m2!1sen!2sin"
               width="100%"
               height="250"
               loading="lazy"
@@ -174,7 +175,7 @@ export default function DandiyaNightLanding() {
               >
                 <option value="2025-09-29">Sep 29, 2025</option>
                 <option value="2025-09-30">Sep 30, 2025</option>
-                <option value="2025-10-01">Oct 1, 2025</option>
+                <option value="2025-10-01">Oct 01, 2025</option>
               </select>
 
               <button
@@ -188,7 +189,7 @@ export default function DandiyaNightLanding() {
                 Book Now
               </button>
             </div>
-            <p className="text-gray-800 mt-2">7:00 PM - 12:00 AM</p>
+            <p className="text-gray-800 mt-2">7:00 PM Onwards</p>
           </CardContent>
         </Card>
       </motion.div>
@@ -424,14 +425,21 @@ export default function DandiyaNightLanding() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: i * 0.1 }}
           viewport={{ once: true }}
-          className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500 bg-white"
+          className="group relative rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-500"
         >
-          <img
-            src={`/guests/guest-${i + 1}.jpg`}
-            alt={`Guest ${i + 1}`}
-            className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent opacity-70 group-hover:opacity-90 transition-all duration-500"></div>
+          {/* Image Container without background or padding */}
+          <div className="w-full aspect-[4/5] flex items-center justify-center">
+            <img
+              src={`/guests/guest-${i + 1}.jpg`}
+              alt={`Guest ${i + 1}`}
+              className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+            />
+          </div>
+
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent opacity-0 group-hover:opacity-40 transition-all duration-500"></div>
+
+          {/* Guest Name */}
           <div className="absolute bottom-4 left-0 right-0 text-center">
             <h3 className="text-xl font-bold text-[#B21D00] drop-shadow-md">Guest {i + 1}</h3>
           </div>
@@ -440,6 +448,8 @@ export default function DandiyaNightLanding() {
     </div>
   </div>
 </section>
+
+
 
 {/* Urgency Section */}
 <section className="py-16 px-4 bg-[#FFF8F0] text-gray-800">
