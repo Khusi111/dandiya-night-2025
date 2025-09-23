@@ -441,7 +441,7 @@ export default function DandiyaNightLanding() {
 
           {/* Guest Name */}
           <div className="absolute bottom-4 left-0 right-0 text-center">
-            <h3 className="text-xl font-bold text-[#B21D00] drop-shadow-md">Guest {i + 1}</h3>
+            <h3 className="text-xl font-bold text-[#B21D00] drop-shadow-md"></h3>
           </div>
         </motion.div>
       ))}
