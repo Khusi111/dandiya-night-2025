@@ -352,20 +352,22 @@ export default function DandiyaNightLanding() {
 
     {/* Call to Action */}
     <motion.div
-      className="text-center"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      <p className="text-lg font-semibold text-[#F59E0B] flex justify-center items-center gap-2 mb-4">
-        <Clock className="w-5 h-5" /> Limited Passes Available – Hurry!
-      </p>
-      <a href="#tickets">
-        <button className="bg-[#F59E0B] hover:bg-[#d17b0b] text-black font-semibold flex items-center gap-2 px-6 py-3 rounded-lg transition-colors">
-          <Ticket className="w-5 h-5" /> Grab Your Pass Now
-        </button>
-      </a>
-    </motion.div>
+  className="text-center"
+  initial={{ opacity: 0 }}
+  animate={{ opacity: 1 }}
+  transition={{ duration: 1 }}
+>
+  <p className="text-lg font-semibold text-[#F59E0B] flex justify-center items-center gap-2 mb-4">
+    <Clock className="w-5 h-5" /> Limited Passes Available – Hurry!
+  </p>
+  <a href="#tickets">
+    <div className="flex justify-center">
+      <button className="bg-[#F59E0B] hover:bg-[#d17b0b] text-black font-semibold flex items-center gap-2 px-6 py-3 rounded-lg transition-colors">
+        <Ticket className="w-5 h-5" /> Grab Your Pass Now
+      </button>
+    </div>
+  </a>
+</motion.div>
   </div>
 </section>
 
@@ -463,13 +465,13 @@ export default function DandiyaNightLanding() {
     {/* Guest Grid */}
     <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
       {[
-        "DJ Arjun",
-        "Singer XYZ",
-        "Influencer ABC",
-        "Dance Troupe Fusion",
-        "Singer PQR",
-        "Comedian LMN",
-        "Anchor DEF",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
       ].map((name, i) => (
         <motion.div
           key={i}
