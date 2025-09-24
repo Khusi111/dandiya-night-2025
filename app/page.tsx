@@ -26,45 +26,40 @@ export default function DandiyaNightLanding() {
     <div className="min-h-screen bg-background scroll-smooth">
 
       {/* Hero Section */}
-      <section
+      {/* Hero Section */}
+<section
   id="hero"
-  className="relative min-h-[120vh] flex flex-col items-center justify-center bg-[#FFF8F0] overflow-hidden"
+  className="relative min-h-screen flex flex-col items-center justify-center bg-[#FFF8F0] overflow-hidden"
 >
   {/* Background Overlay */}
   <div className="absolute inset-0">
-    <div className="absolute inset-0 bg-[url('/vibrant-dandiya-garba-dancers-celebration-festival.jpg')] bg-cover bg-center opacity-80"></div>
+    <div className="absolute inset-0 bg-[url('/vibrant-dandiya-garba-dancers-celebration-festival.jpg')] bg-cover bg-center opacity-70"></div>
     <div className="absolute inset-0 bg-gradient-to-b from-[#FFF8F0]/40 to-[#FFF8F0]/70"></div>
 
     {/* Floating Bokeh/Particles */}
     <div className="absolute inset-0 pointer-events-none">
-      <div className="w-96 h-96 bg-[#FFD9D4] rounded-full opacity-20 absolute top-10 left-10 animate-bounce-slow"></div>
-      <div className="w-72 h-72 bg-[#B21D00] rounded-full opacity-10 absolute bottom-20 right-20 animate-bounce-slow"></div>
+      <div className="w-72 h-72 bg-[#FFD9D4] rounded-full opacity-20 absolute top-10 left-10 animate-bounce-slow"></div>
+      <div className="w-56 h-56 bg-[#B21D00] rounded-full opacity-10 absolute bottom-20 right-20 animate-bounce-slow"></div>
     </div>
   </div>
 
   {/* Content */}
-  <div className="relative z-10 text-center px-4 max-w-5xl mx-auto flex flex-col items-center gap-8">
+  <div className="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center gap-6">
     
     {/* Headline */}
-    <h1 className="text-4xl md:text-6xl font-extrabold leading-tight text-[#B21D00] drop-shadow-lg mt-10">
-      Get Ready Bhubaneswar!<br />
+    <h1 className="text-3xl md:text-5xl font-extrabold leading-snug text-[#B21D00] drop-shadow-lg">
+      Get Ready Bhubaneswar!
+      <br />
       The Biggest Dandiya Night is Here!
     </h1>
 
     {/* Sub-headline */}
-    <p
-  className="text-xl md:text-2xl lg:text-3xl text-white font-bold text-center drop-shadow-lg"
->
-  Dance | Music | Fun | Unlimited Celebrations – A Night to Remember
-</p>
-
-
-
-
-
+    <p className="text-lg md:text-xl text-white font-semibold text-center drop-shadow-lg">
+      Dance | Music | Fun | Unlimited Celebrations – A Night to Remember
+    </p>
 
     {/* IMAGE CAROUSEL */}
-    <div className="w-full max-w-5xl mb-10 mt-6">
+    <div className="w-full max-w-4xl mb-6 mt-4">
       <ImageCarousel
         images={[
           '/carousel1.webp',
@@ -75,18 +70,18 @@ export default function DandiyaNightLanding() {
           '/carousel6.webp',
           '/carousel7.webp',
         ]}
-        showCount={3}      // show 3 images at once
-        gap={16}           // spacing between images
-        autoSlideInterval={3000} // auto slide every 3 sec
-        arrows             // enable left/right arrows
+        showCount={3}
+        gap={16}
+        autoSlideInterval={3000}
+        arrows
       />
     </div>
 
     {/* CTA Button */}
-    <div className="flex justify-center mb-10">
+    <div className="flex justify-center mb-6">
       <Button
         size="lg"
-        className="text-2xl px-10 py-5 bg-gradient-to-r from-[#B21D00] to-[#FF5733] hover:from-[#8a1500] hover:to-[#FF8A65] text-white shadow-2xl rounded-xl font-bold transform transition-all duration-300"
+        className="text-xl px-6 py-3 bg-gradient-to-r from-[#B21D00] to-[#FF5733] hover:from-[#8a1500] hover:to-[#FF8A65] text-white shadow-lg rounded-lg font-bold transform transition-all duration-300"
         data-scroll-to="tickets"
       >
         Book Your Pass Now
@@ -94,22 +89,20 @@ export default function DandiyaNightLanding() {
     </div>
 
     {/* Countdown */}
-    {/* Countdown */}
-<div>
-  <h3 className="text-lg font-semibold mb-4 text-[#B21D00]">
-    Limited Passes – Offer Ends in:
-  </h3>
-  <CountdownTimer targetDate="2025-09-29T23:59:59" />
-</div>
+    <div>
+      <h3 className="text-base font-semibold mb-2 text-[#B21D00]">
+        Limited Passes – Offer Ends in:
+      </h3>
+      <CountdownTimer targetDate="2025-09-29T23:59:59" />
+    </div>
 
-{/* Scroll Arrow (moved below countdown) */}
-<div className="mt-8">
-  <span className="block w-6 h-6 border-b-2 border-r-2 border-[#B21D00] transform rotate-45 mx-auto animate-bounce"></span>
-</div>
-
-</div>
-
+    {/* Scroll Arrow */}
+    <div className="mt-6">
+      <span className="block w-5 h-5 border-b-2 border-r-2 border-[#B21D00] transform rotate-45 mx-auto animate-bounce"></span>
+    </div>
+  </div>
 </section>
+
 
 
 
@@ -320,11 +313,12 @@ export default function DandiyaNightLanding() {
             <li>✓ Photography</li>
           </ul>
         </div>
-        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-          <button className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg transition-colors">
-            Get Event Pass
-          </button>
-        </a>
+        <a href="https://imjo.in/NeXuTg" target="_blank" rel="noopener noreferrer">
+  <button className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg transition-colors">
+    Get Event Pass
+  </button>
+</a>
+
       </motion.div>
 
       {/* Couple Pass */}
@@ -353,11 +347,11 @@ export default function DandiyaNightLanding() {
             <li>✓ Photography</li>
           </ul>
         </div>
-        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-          <button className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg transition-colors">
-            Get Couple Pass
-          </button>
-        </a>
+        <a href="https://imjo.in/bzr4TP" target="_blank" rel="noopener noreferrer">
+  <button className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg transition-colors">
+    Get Couple Pass
+  </button>
+</a>
       </motion.div>
 
       {/* VIP Pass */}
@@ -385,7 +379,7 @@ export default function DandiyaNightLanding() {
             <li>✓ Open Area Dandiya</li>
             <li>✓ Dandiya Sticks Included</li>
             <li>✓ Photography</li>
-            <li>✓ Exclusive Seating</li>
+            <li>✓ Exclusive Lounge Seating</li>
           </ul>
         </div>
         <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">

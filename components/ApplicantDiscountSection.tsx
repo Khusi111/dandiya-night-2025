@@ -110,10 +110,7 @@ export default function ApplicantDiscountSection() {
             </div>
           </div>
 
-          <p className="mt-4 text-base sm:text-lg font-medium text-gray-800">
-            Base Price: ₹{price} | Discount: ₹{discount} | Final Price:{" "}
-            <span className="text-[#B21D00] font-bold">₹{price - discount}</span>
-          </p>
+          
 
           <div className="text-center mt-6">
             <Button
