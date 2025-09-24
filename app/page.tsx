@@ -294,7 +294,9 @@ export default function DandiyaNightLanding() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#B21D00] text-white px-3 py-1 rounded-full font-semibold text-sm">Early Bird</span>
+        <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#B21D00] text-white px-3 py-1 rounded-full font-semibold text-sm">
+          Early Bird
+        </span>
         <div>
           <h3 className="text-2xl font-bold text-[#B21D00] mb-1">Event Pass</h3>
           <p className="text-gray-800 mb-4">Valid till October 1st</p>
@@ -313,12 +315,14 @@ export default function DandiyaNightLanding() {
             <li>✓ Photography</li>
           </ul>
         </div>
-        <a href="https://imjo.in/NeXuTg" target="_blank" rel="noopener noreferrer">
-  <button className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg transition-colors">
-    Get Event Pass
-  </button>
-</a>
-
+        <a
+          href="https://imjo.in/NeXuTg"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg text-center inline-block transition-colors"
+        >
+          Get Event Pass
+        </a>
       </motion.div>
 
       {/* Couple Pass */}
@@ -347,11 +351,14 @@ export default function DandiyaNightLanding() {
             <li>✓ Photography</li>
           </ul>
         </div>
-        <a href="https://imjo.in/bzr4TP" target="_blank" rel="noopener noreferrer">
-  <button className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg transition-colors">
-    Get Couple Pass
-  </button>
-</a>
+        <a
+          href="https://imjo.in/bzr4TP"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg text-center inline-block transition-colors"
+        >
+          Get Couple Pass
+        </a>
       </motion.div>
 
       {/* VIP Pass */}
@@ -362,7 +369,9 @@ export default function DandiyaNightLanding() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#B21D00] text-white px-3 py-1 rounded-full font-semibold text-sm">Best Value</span>
+        <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#B21D00] text-white px-3 py-1 rounded-full font-semibold text-sm">
+          Best Value
+        </span>
         <div>
           <h3 className="text-2xl font-bold text-[#B21D00] mb-1">VIP Pass</h3>
           <p className="text-gray-800 mb-4">6 People - Special Discount</p>
@@ -382,10 +391,13 @@ export default function DandiyaNightLanding() {
             <li>✓ Exclusive Lounge Seating</li>
           </ul>
         </div>
-        <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer">
-          <button className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg transition-colors">
-            Get VIP Pass
-          </button>
+        <a
+          href="https://wa.me/919876543210"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-full bg-[#B21D00] hover:bg-[#991400] text-white font-semibold py-2 rounded-lg text-center inline-block transition-colors"
+        >
+          Get VIP Pass
         </a>
       </motion.div>
     </div>
@@ -411,6 +423,7 @@ export default function DandiyaNightLanding() {
     </motion.div>
   </div>
 </section>
+
 
 
 
