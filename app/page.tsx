@@ -53,10 +53,11 @@ export default function DandiyaNightLanding() {
 
     {/* Sub-headline */}
     <p
-  className="text-xl md:text-2xl text-white font-bold text-center drop-shadow-lg"
+  className="text-xl md:text-2xl lg:text-3xl text-white font-bold text-center drop-shadow-lg"
 >
   Dance | Music | Fun | Unlimited Celebrations – A Night to Remember
 </p>
+
 
 
 

@@ -7,7 +7,7 @@ import { Gift, Key, Ticket, AlertCircle, CheckCircle, ArrowRight } from "lucide-
 export default function ApplicantDiscountSection() {
   const [coupon, setCoupon] = useState("");
   const [discount, setDiscount] = useState(0);
-  const [price, setPrice] = useState(299); // Base price
+  const [price, setPrice] = useState(299);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
@@ -15,13 +15,13 @@ export default function ApplicantDiscountSection() {
 
   const applyCoupon = () => {
     if (coupon.toUpperCase() === "DANDIYA10") {
-      setDiscount(price * 0.1); // 10% off
+      setDiscount(price * 0.1);
       setMessage("✅ Coupon applied! 10% off.");
     } else if (coupon.toUpperCase() === "FEST50") {
-      setDiscount(50); // Flat ₹50
+      setDiscount(50);
       setMessage("✅ Coupon applied! ₹50 off.");
     } else if (coupon.toUpperCase() === "EARLYBIRD50") {
-      setDiscount(price * 0.5); // 50% off
+      setDiscount(price * 0.5);
       setMessage("✅ Coupon applied! 50% off.");
     } else {
       setDiscount(0);
@@ -44,28 +44,14 @@ export default function ApplicantDiscountSection() {
         Exclusive Offers & Affiliates
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-        {/* Left side - Affiliate Logos */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 justify-items-center">
+      {/* Grid with logo centered and coupon box */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+        {/* Left side - Logo always centered */}
+        <div className="flex justify-center">
           <img
             src="/logo.webp"
-            alt="My Logo"
-            className="h-16 sm:h-20 md:h-24 object-contain p-3 bg-white rounded-xl shadow-md hover:scale-110 transition-transform"
-          />
-          <img
-            src="/logo1.webp"
-            alt="My Logo 1"
-            className="h-16 sm:h-20 md:h-24 object-contain p-3 bg-white rounded-xl shadow-md hover:scale-110 transition-transform"
-          />
-          <img
-            src="/logo2.webp"
-            alt="My Logo 2"
-            className="h-16 sm:h-20 md:h-24 object-contain p-3 bg-white rounded-xl shadow-md hover:scale-110 transition-transform"
-          />
-          <img
-            src="/logo3.webp"
-            alt="My Logo 3"
-            className="h-16 sm:h-20 md:h-24 object-contain p-3 bg-white rounded-xl shadow-md hover:scale-110 transition-transform"
+            alt="Logo"
+            className="h-48 sm:h-56 md:h-64 lg:h-72 object-contain p-4 bg-white rounded-xl shadow-md hover:scale-105 transition-transform"
           />
         </div>
 
