@@ -52,22 +52,27 @@ export default function DandiyaNightLanding() {
     </h1>
 
     {/* Sub-headline */}
-    <p className="text-xl md:text-2xl text-gray-800 drop-shadow-sm font-bold">
+    <p
+  className="text-xl md:text-2xl text-white font-bold text-center drop-shadow-lg"
+>
   Dance | Music | Fun | Unlimited Celebrations – A Night to Remember
 </p>
+
+
+
 
 
     {/* IMAGE CAROUSEL */}
     <div className="w-full max-w-5xl mb-10 mt-6">
       <ImageCarousel
         images={[
-          '/carousel1.jpg',
-          '/carousel2.jpg',
-          '/carousel3.jpg',
-          '/carousel4.jpg',
-          '/carousel5.jpg',
-          '/carousel6.jpg',
-          '/carousel7.jpg',
+          '/carousel1.webp',
+          '/carousel2.webp',
+          '/carousel3.webp',
+          '/carousel4.webp',
+          '/carousel5.webp',
+          '/carousel6.webp',
+          '/carousel7.webp',
         ]}
         showCount={3}      // show 3 images at once
         gap={16}           // spacing between images
@@ -158,44 +163,48 @@ export default function DandiyaNightLanding() {
       </motion.div>
 
       {/* Date & Time */}
-      <motion.div
-        initial={{ opacity: 0, x: 80 }}
-        whileInView={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.7 }}
-        viewport={{ once: true }}
+      {/* Date & Time */}
+<motion.div
+  initial={{ opacity: 0, x: 80 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  transition={{ duration: 0.7 }}
+  viewport={{ once: true }}
+>
+  <Card className="bg-white border-2 border-[#B21D00]/40 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 h-full">
+    <CardHeader>
+      <CardTitle className="flex items-center gap-2 text-[#B21D00] text-xl">
+        <Calendar className="h-6 w-6 animate-bounce" /> Date & Time
+      </CardTitle>
+    </CardHeader>
+    <CardContent className="flex flex-col gap-4">
+      {/* Dropdown */}
+      <select
+        id="event-day"
+        className="w-full px-3 py-2 rounded-lg border border-[#B21D00]/40 bg-white text-gray-900 focus:ring-2 focus:ring-[#B21D00] transition-all"
       >
-        <Card className="bg-white border-2 border-[#B21D00]/40 rounded-xl shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300 h-full">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-[#B21D00] text-xl">
-              <Calendar className="h-6 w-6 animate-bounce" /> Date & Time
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="flex flex-col gap-4">
-            <div className="flex items-center gap-4">
-              <select
-                id="event-day"
-                className="w-full px-3 py-2 rounded-lg border border-[#B21D00]/40 bg-white text-gray-900 focus:ring-2 focus:ring-[#B21D00] transition-all"
-              >
-                <option value="2025-09-29">Sep 29, 2025</option>
-                <option value="2025-09-30">Sep 30, 2025</option>
-                <option value="2025-10-01">Oct 01, 2025</option>
-              </select>
+        <option value="2025-09-29">Sep 29, 2025</option>
+        <option value="2025-09-30">Sep 30, 2025</option>
+        <option value="2025-10-01">Oct 01, 2025</option>
+      </select>
 
-              <button
-                onClick={() => {
-                  const daySelect = document.getElementById("event-day") as HTMLSelectElement;
-                  const selectedDay = daySelect.value;
-                  window.location.href = `/pass?day=${selectedDay}`;
-                }}
-                className="px-4 py-2 bg-[#B21D00] text-white font-semibold rounded-lg hover:bg-[#9e1700] transition"
-              >
-                Book Now
-              </button>
-            </div>
-            <p className="text-gray-800 mt-2">7:00 PM Onwards</p>
-          </CardContent>
-        </Card>
-      </motion.div>
+      {/* Time */}
+      <p className="text-gray-800 mt-2">7:00 PM Onwards</p>
+
+      {/* Book Now Button */}
+      <button
+        onClick={() => {
+          const daySelect = document.getElementById("event-day") as HTMLSelectElement;
+          const selectedDay = daySelect.value;
+          window.location.href = `/pass?day=${selectedDay}`;
+        }}
+        className="px-4 py-2 bg-[#B21D00] text-white font-semibold rounded-lg hover:bg-[#9e1700] transition"
+      >
+        Book Now
+      </button>
+    </CardContent>
+  </Card>
+</motion.div>
+
 
     </div>
 
@@ -209,9 +218,9 @@ export default function DandiyaNightLanding() {
       <h3 className="text-3xl font-bold mb-8 text-center text-[#B21D00]">📅 Daily Schedule</h3>
       <div className="grid md:grid-cols-3 gap-6">
         {[
-          { day: "Day 1 - Sep 29", performers: "Emcee Pinkie, DJ Ryan", food: "Gujarati Thali, Street Snacks" },
-          { day: "Day 2 - Sep 30", performers: "Emcee Pupul, DJ Priti", food: "Chats, Fusion Dishes" },
-          { day: "Day 3 - Oct 1", performers: "Emcee Rajiv, Partho", food: "Multi-cuisine Festival Stalls" },
+          { day: "Day 1 - Sep 29", performers: "Emcee Pinkie, DJ Ryan, Dhol",Food: "Gujarati Thali, Street Snacks"},
+          { day: "Day 2 - Sep 30", performers: "Emcee Pupul, DJ Priti, Dhol", Food: "Chats, Fusion Dishes" },
+          { day: "Day 3 - Oct 1", performers: "Emcee Rajiv, Partho, Dhol, Live Band",Food: "Multi-cuisine Festival Stalls"  },
         ].map((schedule, index) => (
           <motion.div
             key={index}
@@ -224,7 +233,7 @@ export default function DandiyaNightLanding() {
               <CardContent className="pt-6">
                 <h4 className="font-semibold mb-2 text-lg text-[#B21D00]">{schedule.day}</h4>
                 <p className="text-gray-800"><b>Performers:</b> {schedule.performers}</p>
-                <p className="text-gray-800"><b>Food:</b> {schedule.food}</p>
+                <p className="text-gray-800"><b>Food:</b> {schedule.Food}</p>
               </CardContent>
             </Card>
           </motion.div>
@@ -396,6 +405,7 @@ export default function DandiyaNightLanding() {
       <p className="text-lg font-semibold text-[#B21D00] flex justify-center items-center gap-2 mb-4">
         <Clock className="w-5 h-5" /> Limited Passes Available – Hurry!
       </p>
+      
       <a href="#tickets">
         <div className="flex justify-center">
           <button className="bg-[#B21D00] hover:bg-[#991400] text-white font-semibold flex items-center gap-2 px-6 py-3 rounded-lg transition-colors">
@@ -446,7 +456,7 @@ export default function DandiyaNightLanding() {
           {/* Image Container without background or padding */}
           <div className="w-full aspect-[4/5] flex items-center justify-center">
             <img
-              src={`/guests/guest-${i + 1}.jpg`}
+              src={`/guests/guest-${i + 1}.webp`}
               alt={`Guest ${i + 1}`}
               className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
             />
@@ -468,18 +478,32 @@ export default function DandiyaNightLanding() {
 
 
 {/* Urgency Section */}
+
 <section className="py-16 px-4 bg-[#FFF8F0] text-gray-800">
   <div className="max-w-4xl mx-auto text-center">
+    {/* Heading */}
     <motion.h2
       initial={{ opacity: 0, y: -20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
-      className="text-4xl font-bold mb-6 flex items-center justify-center gap-2 text-[#B21D00]"
+      className="text-3xl sm:text-4xl font-extrabold mb-6 flex items-center justify-center gap-2 text-[#B21D00]"
     >
       <AlertTriangle className="h-8 w-8" /> Passes Selling Out Fast!
     </motion.h2>
-    <div className="flex justify-center mb-10">
+
+    {/* Countdown */}
+    <div className="mb-8">
+      <h3 className="text-base sm:text-lg font-semibold mb-3 text-[#B21D00]">
+        Limited Passes – Offer Ends in:
+      </h3>
+      <div className="inline-block bg-white rounded-lg px-4 py-2 shadow-sm text-sm sm:text-base font-bold text-[#B21D00]">
+        <CountdownTimer targetDate="2025-09-29T23:59:59" />
+      </div>
+    </div>
+
+    {/* Button */}
+    <div className="flex justify-center">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -488,7 +512,7 @@ export default function DandiyaNightLanding() {
       >
         <Button
           size="lg"
-          className="text-xl px-8 py-4 flex items-center gap-4 bg-[#B21D00] text-white hover:bg-[#991400]"
+          className="text-lg sm:text-xl px-6 sm:px-8 py-3 sm:py-4 flex items-center gap-3 bg-[#B21D00] text-white hover:bg-[#991400] rounded-full shadow-md"
           data-scroll-to="tickets"
         >
           <Flame className="h-6 w-6" /> Book Your Pass Today
@@ -497,6 +521,13 @@ export default function DandiyaNightLanding() {
     </div>
   </div>
 </section>
+
+
+
+
+
+{/* Urgency Section */}
+
 
 
 {/* Contact Section */}
